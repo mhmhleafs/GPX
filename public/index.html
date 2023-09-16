@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>GPS Data Viewer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="GPS Data Viewer">
+    <meta name="keywords" content="GPS Data Viewer">
+    <meta name="author" content="GPS Data Viewer">
+    <!-- Load jquery, bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Custom CSS End -->
+</head>
+
+<body>
+    <!--<h3>Download test</h3>
+    If the A3 stub is running and simple.gpx exists in the uploads/ directory on the server, then clicking on the link
+    below will download it from the server.<br>
+    <a href="testCard.vcf" download ">simple.gpx</a>
+    <p></p>-->
+
+    <hr>
+    <div id=" blah">GPS Data Viewer</div>
+    <hr>
+    <!--<form ref='someform' id='someform'>
+        <div class="form-group">
+            <label for="entryBox">Last Name</label>
+            <input type="text" class="form-control" id="entryBox" value="Value" placeholder="Placeholder">
+        </div>
+        <div class="form-group">
+            <input type='submit' class="btn btn-secondary">
+        </div>
+    </form>-->
+
+    <form ref='uploadForm' id='uploadForm' action='/upload' method='post' encType="multipart/form-data">
+        <div class="form-group">
+            <input type="file" name="uploadFile" class="btn btn-secondary">
+            <input type='submit' value='Upload' class="btn btn-secondary" id="uploadButton">
+        </div>
+    </form>
+    <!--file log panel-->
+    <div>
+        <table id="fileLogTable">
+            <thead>
+                <tr>
+                    <th>File name (click to download)</th>
+                    <th>Version</th>
+                    <th>Creator</th>
+                    <th>Number of waypoints</th>
+                    <th>Number of routes</th>
+                    <th>Number of tracks</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <!--end of file log panel-->
+    <!--GPX view panel-->
+    <div>
+        <div class="dropdown">
+            <button class="dropbtn">Dropdown</button>
+            <div class="dropdown-content" id="dropdowncontent">
+            </div>
+        </div>
+    </div>
+    <div id="gpxViewPanel">
+        <table id="gpxViewTable">
+            <thead>
+                <tr style="width:100%;">
+                    <th style="width:20%;">Component</th>
+                    <th style="width:20%;">Name</th>
+                    <th style="width:20%;">Number of points</th>
+                    <th style="width:20%;">Length</th>
+                    <th style="width:20%;">Loop</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <!--end of GPX view panel-->
+    <!--start of rename form-->
+    <div>
+        <form ref='someform' id='someform'>
+            <div class="form-group">
+                <label for="renameBox">Rename Component (click the name of the component first)</label>
+                <input type="text" class="form-control" id="renameBox" value="Value" placeholder="Placeholder">
+            </div>
+            <div class="form-group">
+                <input type='submit' class="btn btn-secondary renameButton">
+            </div>
+        </form>
+    </div>
+    <!--end of rename form-->
+
+    <!--start of add route form-->
+    <div>
+        <form ref='someform2' id='someform2'>
+            <div class="form-group">
+                <label for="routeBox">Create doc (with routes below) by adding a filename (must end in .gpx)</label>
+                <input type="text" class="form-control" id="routeBox0" value="" placeholder="Placeholder Filename">
+            </div>
+            <div class="form-group">
+                <input type='submit' class="btn btn-secondary newDocButton" value="New doc">
+            </div>
+            <div class="form-group">
+                <label for="routeBox" id="newRouteTitle">Add route to (NAME HERE)that contains the following
+                    point:</label>
+                <input type="text" class="form-control" id="routeBox1" value="" placeholder="Placeholder Lat">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="routeBox2" value="" placeholder="Placeholder Lon">
+            </div>
+            <div class="form-group">
+                <label for="routeBox">Add a name to the route (optional)</label>
+                <input type="text" class="form-control" id="routeBox3" value="" placeholder="Placeholder Route Name">
+            </div>
+            <div class="form-group">
+                <label for="routeBox">Add route that also contains the following point:</label>
+                <input type="text" class="form-control" id="routeBox1b" value="" placeholder="Placeholder Lat">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="routeBox2b" value="" placeholder="Placeholder Lon">
+            </div>
+
+            <div class="form-group">
+                <input type='submit' class="btn btn-secondary addRouteButton" value="Add route">
+            </div>
+        </form>
+    </div>
+    <!--end of add route form-->
+
+    <h2>A4 functionality</h2>
+    <div>
+        <form id='loginForm' ref='loginForm' encType="multipart/form-data">
+            <div>
+                <label for='loginForm'>Username:</label>
+                <input type="text" id="usernameLogin" value="">
+                <br>
+                <label for='loginForm'>Password:</label>
+                <input type="password" id="passwordLogin" value="">
+                <br>
+                <label for='loginForm'>Database:</label>
+                <input type="text" id="databaseLogin" value="">
+                <br>
+                <input type="submit" id="loginButton" value="Login">
+            </div>
+        </form>
+    </div>
+    <div>
+        <button type="button" id='clearData'>
+            Click to remove all data from tables
+        </button>
+    </div>
+    <div>
+        <button type="button" id='dbStatus'>
+            Click to display DB status
+        </button>
+    </div>
+    <div>
+        <div class="dropdown">
+            <button class="dropbtn2">Queries</button>
+            <div class="dropdown-content" id="querydropdown">
+                <button class="dropDownButton2" type="button">Display routes (order by name)</button>
+                <button class="dropDownButton2" type="button">Display routes (order by length)</button>
+                <button class="dropDownButton2" type="button">Display routes from file (order by name, file selected from dropdown above)</button>
+                <button class="dropDownButton2" type="button">Display routes from file (order by length, file selected from dropdown above)</button>
+                <button class="dropDownButton2" type="button">Display points from route (select route from GPX view panel by clicking on its name)</button>
+                <button class="dropDownButton2" type="button">Display points from file (order by route name, file selected from dropdown above)</button>
+                <button class="dropDownButton2" type="button">Display points from file (order by route length, file selected from dropdown above)</button>
+                <button class="dropDownButton2" type="button">TODO: Query 5</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <table id="queryTable">
+            <thead>
+                <tr>
+                    <th>Route Name</th>
+                    <th>Route Length</th>
+                    <th>Point Name</th>
+                    <th>Point Index</th>
+                    <th>Filename</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- Leave me at the bottom of body -->
+    <script src="index.js"></script>
+</body>
+
+</html>

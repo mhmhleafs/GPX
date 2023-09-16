@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1" creator="Denis Nikitenko 2021.01.13">
+  <wpt lat="49.60" lon="-123.61">
+    <name>Mount Steele 1659m</name>
+  </wpt>
+  <wpt lat="49.61" lon="-123.60">
+    <name>Raven Dance Peak 1647m</name>
+  </wpt>
+  <wpt lat="49.61" lon="-123.61">
+    <name>Steele Cabin</name>
+  </wpt>
+  <rte>
+    <name>Some route</name>
+    <desc>Some description</desc>
+    <rtept lat="44.60" lon="-123.62">
+      <name>Route Start</name>
+    </rtept>
+    <rtept lat="44.60" lon="-123.62">
+      <name></name>
+    </rtept>
+    <rtept lat="44.60" lon="-123.62">
+      <name></name>
+    </rtept>
+  </rte>
+  <rte>
+    <name>Hello 6</name>
+    <rtept lat="6.00" lon="7.00">
+      <name></name>
+    </rtept>
+    <rtept lat="8.00" lon="9.00">
+      <name></name>
+    </rtept>
+  </rte>
+  <rte>
+    <name>Hello 6</name>
+    <rtept lat="6.00" lon="7.00">
+      <name></name>
+    </rtept>
+    <rtept lat="8.00" lon="9.00">
+      <name></name>
+    </rtept>
+  </rte>
+  <rte>
+    <name>Hello 6</name>
+    <rtept lat="6.00" lon="7.00">
+      <name></name>
+    </rtept>
+    <rtept lat="8.00" lon="9.00">
+      <name></name>
+    </rtept>
+  </rte>
+  <rte>
+    <name>Unnamed Route 1</name>
+    <rtept lat="6.00" lon="7.00">
+      <name></name>
+    </rtept>
+    <rtept lat="8.00" lon="9.00">
+      <name></name>
+    </rtept>
+  </rte>
+  <rte>
+    <name>Unnamed Route 2</name>
+    <rtept lat="6.00" lon="7.00">
+      <name></name>
+    </rtept>
+    <rtept lat="8.00" lon="9.00">
+      <name></name>
+    </rtept>
+  </rte>
+  <rte>
+    <name>Some route</name>
+    <rtept lat="6.00" lon="7.00">
+      <name></name>
+    </rtept>
+    <rtept lat="8.00" lon="9.00">
+      <name></name>
+    </rtept>
+  </rte>
+  <rte>
+    <name>Some route2</name>
+    <rtept lat="6.00" lon="7.00">
+      <name></name>
+    </rtept>
+    <rtept lat="8.00" lon="9.00">
+      <name></name>
+    </rtept>
+  </rte>
+  <rte>
+    <name>Some route2</name>
+    <rtept lat="6.00" lon="7.00">
+      <name></name>
+    </rtept>
+    <rtept lat="8.00" lon="9.00">
+      <name></name>
+    </rtept>
+  </rte>
+  <rte>
+    <name>Some route3</name>
+    <rtept lat="6.00" lon="7.00">
+      <name></name>
+    </rtept>
+    <rtept lat="8.00" lon="9.00">
+      <name></name>
+    </rtept>
+  </rte>
+  <rte>
+    <name>Some route3</name>
+    <rtept lat="6.00" lon="7.00">
+      <name></name>
+    </rtept>
+    <rtept lat="8.00" lon="9.00">
+      <name></name>
+    </rtept>
+  </rte>
+  <trk>
+    <name>Mount Steele Trail</name>
+    <desc>Steep but continuous beaten path. From the Edwards Lake cabin continue east.
+        </desc>
+    <trkseg>
+      <trkpt lat="49.60" lon="-123.62">
+        <name>Track Start</name>
+      </trkpt>
+      <trkpt lat="49.60" lon="-123.62">
+        <name></name>
+      </trkpt>
+      <trkpt lat="49.60" lon="-123.62">
+        <name></name>
+      </trkpt>
+      <trkpt lat="49.60" lon="-123.62">
+        <name></name>
+      </trkpt>
+      <trkpt lat="49.60" lon="-123.62">
+        <name></name>
+      </trkpt>
+      <trkpt lat="49.60" lon="-123.62">
+        <name></name>
+      </trkpt>
+      <trkpt lat="49.60" lon="-123.62">
+        <name></name>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>
